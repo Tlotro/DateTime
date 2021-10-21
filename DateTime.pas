@@ -1,5 +1,5 @@
 ﻿
-function IsLeapYear(Time: DateTime): boolean;
+function IsLeapYear(Time: Integer): boolean;
 begin
   result := ((Time.Year div 4 = 0) and (Time.Year div 100 <> 0)) or (Time.Year div 400 = 0)
 end;
@@ -10,6 +10,13 @@ begin
     result := Day1;
   else 
     result := Day2;
+end;
+
+function DaysInYear(Year: integer):integer;
+begin
+  result := 365;
+  if IsLeapYear(Year) then
+    result += 1;
 end;
 
 begin
